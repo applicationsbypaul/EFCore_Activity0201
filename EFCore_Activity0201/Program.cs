@@ -1,12 +1,21 @@
-﻿using System;
+﻿using Microsoft.Extensions.Configuration;
 
-namespace MyApp // Note: actual namespace depends on the project name.
+namespace EFCore_Activity0201;
+internal class Program
 {
-    internal class Program
+    private static IConfigurationRoot? _configuration;
+
+    static void Main(string[] args)
     {
-        static void Main(string[] args)
-        {
-            Console.WriteLine("Hello World!");
-        }
+        BuildConfiguration();
+        Console.WriteLine($"CNSTR: {_configuration.GetConnectionString("AdventureWorks")}");
     }
-}
+
+    private static void BuildConfiguration()
+    {
+        var builder = new ConfigurationBuilder()
+            .SetBasePath(Directory.GetCurrentDirectory())
+            .AddJsonFile("appsettings.json", optional: true,
+            reloadOnChange: true);
+        _configuration = builder.Build();
+    }
