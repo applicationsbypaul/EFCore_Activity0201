@@ -19,3 +19,4 @@ internal class Program
             reloadOnChange: true);
         _configuration = builder.Build();
     }
+}
