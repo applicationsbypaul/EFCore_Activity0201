@@ -105,7 +105,6 @@ namespace EFCore_DBLibrary
         public virtual DbSet<Vendor> Vendors { get; set; } = null!;
         public virtual DbSet<WorkOrder> WorkOrders { get; set; } = null!;
         public virtual DbSet<WorkOrderRouting> WorkOrderRoutings { get; set; } = null!;
-
         // Unable to generate entity type for table 'Production.Document' since its primary key could not be scaffolded. Please see the warning messages.
         // Unable to generate entity type for table 'Production.ProductDocument' since its primary key could not be scaffolded. Please see the warning messages.
 

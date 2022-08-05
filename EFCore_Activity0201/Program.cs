@@ -13,7 +13,6 @@ internal class Program
         BuildConfiguration();
         BuildOptions();
         ListPeople();
-        ListProducts();
     }
 
     static void BuildConfiguration()
@@ -39,17 +38,6 @@ internal class Program
         foreach (var person in people)
         {
             Console.WriteLine($"{person.FirstName} {person.LastName}");
-        }
-    }
-    
-    static void ListProducts()
-    {
-        using var db = new AdventureWorksContext(_optionsBuilder.Options);
-        var products = db.Products.Take(20).ToList();
-
-        foreach (var product in products)
-        {
-            Console.WriteLine($"{product.Name} ");
         }
     }
 }
